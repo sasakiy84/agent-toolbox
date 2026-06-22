@@ -60,15 +60,15 @@ category は `add`、`bug`、`change`、`docs`、`enhance`、`feature`、`fix`�
 
 ## ヘッダー
 
-テンプレートがある場合はその項目を使う。基本項目:
+テンプレートがある場合はその項目を使う。先頭ヘッダーは Markdown のリスト形式で書く。基本項目:
 
-- `Priority: High / Medium / Low`
-- `Created: YYYY-MM-DD`
-- `Completed: {YYYY-MM-DD}` または空欄
-- `Model: <model-name> <version>`
-- `Branch: <branch name>`
-- `Polished: YYYY-MM-DD`
-- `Reporter: @user`
+- `- Priority: High / Medium / Low`
+- `- Created: YYYY-MM-DD`
+- `- Completed: {YYYY-MM-DD}` または空欄
+- `- Model: <model-name> <version>`
+- `- Branch: <branch name>`
+- `- Polished: YYYY-MM-DD`
+- `- Reporter: @user`
 
 `Created` は作成日を入れる。`Completed` は作成時点では完了にしない。`Polished` は、作成時点で実装着手可能な粒度まで磨いた場合だけ入れる。`Reporter` はフィードバックやバグ報告由来の場合だけ使う。
 

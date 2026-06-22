@@ -42,15 +42,15 @@ category は以下を基本にする:
 
 新規 issue は `issues/0000-template.md` があればそれを写して作る。テンプレートがない場合は、既存 issue の最新の open issue か closed issue に合わせる。
 
-ヘッダー項目:
+先頭ヘッダーは Markdown のリスト形式で書く。基本項目:
 
-- `Priority: High / Medium / Low`
-- `Created: YYYY-MM-DD`
-- `Completed: YYYY-MM-DD`
-- `Model: <model-name> <version>`
-- `Branch: <branch name>`
-- `Polished: YYYY-MM-DD`
-- `Reporter: @user`
+- `- Priority: High / Medium / Low`
+- `- Created: YYYY-MM-DD`
+- `- Completed: YYYY-MM-DD`
+- `- Model: <model-name> <version>`
+- `- Branch: <branch name>`
+- `- Polished: YYYY-MM-DD`
+- `- Reporter: @user`
 
 `Completed` は完了前なら `{YYYY-MM-DD}` のままにしてよい。`Polished` と `Reporter` は既存テンプレートにある場合だけ使う。
 
