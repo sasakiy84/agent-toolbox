@@ -1,6 +1,6 @@
 ---
 name: sasakiy-review-diff-code
-description: Strict Japanese code review for the current diff or a specified patch. Use when Codex needs to review uncommitted changes, staged changes, a commit range, PR diff, or implementation diff; prioritize bugs, regressions, missing tests, changelog mismatch, and issue completion gaps with concrete file/line findings.
+description: Strict Japanese code review for the current diff or a specified patch. Use when Codex needs to review uncommitted changes, staged changes, a commit range, PR diff, or implementation diff; prioritize bugs, regressions, missing tests, changelog mismatch, issue completion gaps, maintainability, security, and UI issues with concrete file/line findings.
 ---
 
 # Sasakiy Review Diff Code
@@ -34,7 +34,31 @@ description: Strict Japanese code review for the current diff or a specified pat
 5. `CHANGES.md` の不足、種別ミス、最終差分と違う記載。
 6. リポジトリ規約違反、コメント・ログ言語、命名、フォーマット。
 
+`$sasakiy-testing`、`$sasakiy-ui`、`$sasakiy-japanese-writing`、各言語やフレームワークの skill が対象に合う場合は、それらの観点も使う。
+
 スタイルだけの指摘は、実害や保守上の問題がある場合に絞る。
+
+## 実装品質の観点
+
+- 既存コードの命名、責務分割、エラー処理、テストの書き方に合っているか。
+- 新しい抽象化が、実際の重複や複雑性を減らしているか。将来の拡張を見越した過剰な一般化になっていないか。
+- 関数を細かく切りすぎてコードジャンプを増やしていないか。意味的に 1 つの処理なら、長さより読みやすい構造を優先しているか。
+- コードジャンプが増えるだけの wrapper 関数や wrapper class がないか。
+- 一般的すぎて何をしているのか分からない命名がないか。
+- 定数や型エイリアスが、利用箇所から不必要に離れていないか。
+- 一定以上の SQL / HTML / CSS / JS が、インラインではなく専用ファイルで管理されているか。
+- コメントが処理内容の説明ではなく、理由、制約、互換性、外部 API の癖、過去の不具合回避を説明しているか。
+- 長い関数や複雑な条件分岐が、レビューしやすい単位で区切られているか。
+- データ型や table 定義で、コードから読み取れないフィールドの意味が補足されているか。
+- secret、token、credential、個人情報がログやテストデータに含まれていないか。
+- エラーを握りつぶしていないか。
+
+## 文書と文体の観点
+
+- 成果物に現在の仕様だけが残っているか。過去の議論や不採用案が残っていないか。
+- 将来の変更に影響する設計上のトレードオフが、理由付きで簡潔に残っているか。
+- 複数ファイルをまたぐ機能で、必要な `docs/` や `README.md` の更新が抜けていないか。
+- ファイル冒頭に、必要な目的、役割、利用方法が書かれているか。
 
 ## 差分の読み方
 

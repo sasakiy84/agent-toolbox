@@ -1,6 +1,6 @@
 ---
 name: sasakiy-git
-description: Git workflow rules for Sasakiy-style repositories, including commit message style, issue-linked commits, hook/test requirements, branch-agnostic safety checks, and safe git operations. Use before Codex creates branches, stages files, commits, moves issue files, merges, rebases, checks status, writes commit messages, or otherwise operates git.
+description: Git workflow rules for Sasakiy-style repositories, including commit message style, issue-linked commits, hook/test requirements, branch-agnostic safety checks, clean staging, and safe git operations. Use before Codex creates branches, stages files, commits, moves issue files, merges, rebases, checks status, writes commit messages, or otherwise operates git.
 ---
 
 # Sasakiy Git
@@ -14,6 +14,7 @@ git 操作を行うときに使う。まずリポジトリの `AGENTS.md` を読
 - フックをスキップしない。
 - 破壊的な git 操作をしない。`reset --hard`、作業ツリーを捨てる checkout/restore、強制 push などは、ユーザーが明示した場合だけ行う。
 - 作業前後に `git status --short` で差分を確認する。
+- 作業前から存在する未コミット変更は、明示的に依頼されない限り触らない・戻さない・コミットに混ぜない。
 - ユーザーや他プロセスの差分を巻き戻さない。
 
 ## コミットメッセージ
