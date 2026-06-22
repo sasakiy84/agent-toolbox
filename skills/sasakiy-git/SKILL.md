@@ -22,23 +22,23 @@ git 操作を行うときに使う。まずリポジトリの `AGENTS.md` を読
 - 日本語で書く。
 - 命令形で書く。
 - 「〜する」という形で書く。
-- issue に対応するコミットでは、件名に issue 番号とタイトルまたは要約を含める。
+- issue に対応するコミットでは、件名に `i00001` のような issue ID とタイトルまたは要約を含める。
 - 1 issue 完了ごとに 1 コミットを原則にする。
-- issue を作成したコミットでは、issue 番号とタイトルを記載する。
+- issue を作成したコミットでは、issue ID とタイトルを記載する。
 
 コミット件名は次のような形にする。
 
 ```text
-00001 mux_mp4_file.rs の data_size の u32 トランケーションを修正する
-00003 Encoder と Decoder の close と reset の binding で GIL 保持デッドロックが発生する issue を追加する
-00049 closed prop_h264_sps の PBT を構造化 Strategy に置き換えてクラッシュフリー専用テストを fuzz/ に移管する
-00039 解決方法セクションに判定結果と後続 issue 方針を追記する
+i00001 mux_mp4_file.rs の data_size の u32 トランケーションを修正する
+i00003 Encoder と Decoder の close と reset の binding で GIL 保持デッドロックが発生する issue を追加する
+i00049 closed prop_h264_sps の PBT を構造化 Strategy に置き換えてクラッシュフリー専用テストを fuzz/ に移管する
+i00039 解決方法セクションに判定結果と後続 issue 方針を追記する
 ```
 
 本文が必要な場合は、件名の後に空行を置き、箇条書きで変更内容、理由、テスト、判断を具体的に書く。件名だけで説明しきれない変更では本文を書く。
 
 ```text
-00001 mux_mp4_file.rs の data_size の u32 トランケーションを修正する
+i00001 mux_mp4_file.rs の data_size の u32 トランケーションを修正する
 
 - src/mux_mp4_file.rs の暗黙キャストを try_from() に置き換える
 - 境界値成功、境界値超過、エラー後リトライのテストを追加する

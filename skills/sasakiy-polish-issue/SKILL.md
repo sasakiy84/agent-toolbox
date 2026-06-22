@@ -113,4 +113,4 @@ polish 完了と言うのは、少なくとも致命的・重要な指摘が残�
 - `Polished` が必要なら更新済み。
 - `Branch` とファイル名が必要なら更新済み。
 - `pending/` や `closed/` への移動が必要なら `$sasakiy-issues` と `$sasakiy-git` に従う。
-- polish のコミットを作る場合は、issue 番号と「磨き上げる」内容が分かる件名にする。
+- polish のコミットを作る場合は、issue ID と「磨き上げる」内容が分かる件名にする。

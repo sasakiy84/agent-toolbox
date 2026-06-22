@@ -13,13 +13,13 @@ description: Repository-local issue management for projects that keep issues as 
 - open な issue は `issues/` 直下、完了した issue は `issues/closed/`、設計判断や外部要因で保留する issue は `issues/pending/` に置く。
 - 番号が小さい issue から順に対応する。
 - `issues/SEQUENCE` を採番元にする。新規 issue を作成したら、使った番号の次の値へ `issues/SEQUENCE` を更新する。
-- issue 番号は常に 5 桁ゼロ埋めにする。
+- issue ID は、`i00001` のように `i` を接頭辞として付け、番号部分を 5 桁ゼロ埋めにする。
 - GitHub Issue へ転記しない。リポジトリ内の issue ファイルを正とする。
 - issue を作成・移動・close したら、その変更をコミット対象にする。コミット操作は `$sasakiy-git` を使う。
 
 ## ファイル名
 
-ファイル名は `{seqnum5}-{category}-{short-description}.md` にする。
+ファイル名は `{issue-id}-{category}-{short-description}.md` にする。`issue-id` は `i00001` のように `i` と 5 桁ゼロ埋めの番号で構成する。
 
 category は以下を基本にする:
 
@@ -77,11 +77,11 @@ issue は、その issue だけで実装判断ができる粒度まで磨く。�
 
 1. `AGENTS.md`、`issues/0000-template.md`、既存 issue の命名と本文を確認する。
 2. `issues/SEQUENCE` から次の番号を読む。
-3. 5 桁ゼロ埋めの番号でファイル名を決め、`issues/` 直下に Markdown ファイルを作る。
+3. 読んだ番号を `i00001` のような issue ID に変換してファイル名を決め、`issues/` 直下に Markdown ファイルを作る。
 4. `Created` に今日の日付を入れる。
 5. テンプレートに `Branch` があり、ユーザー指示またはリポジトリ固有の規約でブランチ名が決まっている場合だけ入れる。
 6. `issues/SEQUENCE` を次の番号へ更新する。
-7. issue 作成のコミットを作る場合は、コミットメッセージに issue 番号とタイトルを入れる。
+7. issue 作成のコミットを作る場合は、コミットメッセージに issue ID とタイトルを入れる。
 
 ## issue を磨く
 
@@ -107,7 +107,7 @@ issue は、その issue だけで実装判断ができる粒度まで磨く。�
 1. `Completed: YYYY-MM-DD` を実日付に更新する。
 2. `## 解決方法` に、何をどう修正したか、どのテストで確認したか、当初方針との差異を記載する。
 3. `git mv` で `issues/closed/` へ移動する。
-4. コミットメッセージには issue 番号とタイトル、または close したことが分かる内容を入れる。
+4. コミットメッセージには issue ID とタイトル、または close したことが分かる内容を入れる。
 
 ## pending にする
 

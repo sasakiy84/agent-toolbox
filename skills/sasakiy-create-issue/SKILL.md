@@ -52,8 +52,8 @@ create-issue では、実装可能性の詳細まで詰め切らなくてよい�
 ## 採番とファイル名
 
 1. `issues/SEQUENCE` の値を読む。
-2. その番号を 5 桁ゼロ埋めで使う。
-3. ファイル名は `{seqnum5}-{category}-{short-description}.md` にする。
+2. その番号を `i00001` のように `i` 接頭辞付きの 5 桁ゼロ埋め issue ID に変換する。
+3. ファイル名は `{issue-id}-{category}-{short-description}.md` にする。
 4. 作成後、`issues/SEQUENCE` を次の番号に更新する。
 
 category は `add`、`bug`、`change`、`docs`、`enhance`、`feature`、`fix`、`fmt`、`investigate`、`other`、`refactor`、`test` を基本にする。リポジトリ固有の命名規則がある場合は、`feature-add-...` や `bug-fix-...` のような複合形も含めて既存 issue に合わせる。
@@ -111,4 +111,4 @@ category は `add`、`bug`、`change`、`docs`、`enhance`、`feature`、`fix`�
 
 - `issues/SEQUENCE` が更新済みか確認する。
 - Markdown format が崩れていないか確認する。
-- issue 作成をコミットする場合は `$sasakiy-git` に従い、コミットメッセージに issue 番号とタイトルを含める。
+- issue 作成をコミットする場合は `$sasakiy-git` に従い、コミットメッセージに issue ID とタイトルを含める。
