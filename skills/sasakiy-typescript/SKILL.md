@@ -27,3 +27,6 @@ TypeScript / JavaScript のコードを実装・修正するときに使う。�
 - テスト helper は、テストで確認したいフィールドだけを明示的に指定できる形にする。
 - 呼び出し元で直接書ける処理を無駄に wrapper 化しない。たとえば `response.json()` を呼ぶだけの wrapper は避ける。
 - 型エラーや lint エラーを `ignore`、`any`、型アサーションで安易に回避しない。
+- Playwright では web-first assertion を使う。
+- Testing Library を有効活用する。
+- MSW で外部 API をモックする。
