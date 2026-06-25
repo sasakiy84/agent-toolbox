@@ -5,7 +5,7 @@ description: Git workflow rules for Sasakiy-style repositories, including commit
 
 # Sasakiy Git
 
-git 操作を行うときに使う。まずリポジトリの `AGENTS.md` を読む。リポジトリ固有の git・コミット規約がある場合はそれを優先する。issue 起点の作業では `$sasakiy-issues` も併用する。
+git 操作を行うときに使う。まずリポジトリの `AGENTS.md` を読む。リポジトリ固有の git・コミット規約がある場合はそれを優先する。issue 起点の作業では、リポジトリ内の issue 運用ルールも確認する。
 
 ## 基本方針
 
@@ -51,7 +51,7 @@ i00001 mux_mp4_file.rs の data_size の u32 トランケーションを修正�
 
 - `git status --short` で意図したファイルだけが含まれている。
 - issue 対応なら issue 本文の完了条件を満たしている。
-- `CHANGES.md` 更新が必要な変更では `$sasakiy-changelog` に従っている。
+- `CHANGES.md` 更新が必要な変更では、リポジトリ固有の形式と直近の記載に従っている。
 - リポジトリで指定された format / lint / test が通っている。
 - フックをスキップしていない。
 
