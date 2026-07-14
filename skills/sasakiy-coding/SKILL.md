@@ -32,6 +32,7 @@ description: Sasakiy-style coding rules for implementation work, covering reposi
 - 定数や型エイリアスは、利用箇所から不必要に離さない。
 - 一定以上の SQL、HTML、CSS、JavaScript は、インラインではなく専用ファイルで管理する。
 - コメントは処理内容ではなく、理由、制約、互換性、外部 API の癖、過去の不具合回避を説明するために書く。
+- CLI 用のスクリプトのファイル冒頭や、長い関数のブロックごとの処理にはコメントを書く。ただし、関数名などですでに表現されている情報は書かない
 - secret、token、credential、個人情報をログやテストデータに含めない。
 - エラーを握りつぶさない。利用者に見せる必要のない内部状態は、外部レスポンスでは適切に丸める。
 
