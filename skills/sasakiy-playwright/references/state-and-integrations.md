@@ -13,7 +13,6 @@
 - 未認証テストでは空の `storageState` を明示する。
 - IndexedDB に token を保存する場合は、対応 version を確認して `storageState({ indexedDB: true })` を検討する。
 - `storageState` は session storage を保存しない。必要な場合は host を限定した `addInitScript()` で復元する。
-- UI Mode は setup project を既定では実行しない。state の期限が切れた場合は setup project を明示的に実行する。
 - 認証 UI 自体のテストと、認証済み状態を前提にした機能テストを分ける。
 
 ## Network と API を目的に応じて扱う

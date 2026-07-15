@@ -57,6 +57,13 @@ export default defineConfig({
 - screenshot と video は調査価値と artifact サイズを基準に選ぶ。CI 失敗では trace を優先する。
 - `webServer.url` で readiness を確認する。local では既存 server を再利用できるが、CI ではテストが起動した server を使う。
 - test、expect、action、navigation、fixture、global の timeout を区別し、最も狭い責務に設定する。
-- setup は project dependency を基本にする。通常の `globalSetup` は project dependency で扱えない事情がある場合だけ選ぶ。
+
+## DB を準備する
+
+- suite 共通の DB 初期化や migration は setup project に置き、対象 project から `dependencies` で依存させることを基本にする。通常の `globalSetup` は project dependency で扱えない事情がある場合だけ選ぶ。
+- `webServer.command` は server の起動に集中させる。DB 準備との連結は、準備済みの DB がなければ server を起動できない場合に限る。
+- worker ごとに独立した DB が必要な場合は、worker-scoped fixture で作成、割り当て、破棄を管理する。
+- DB を削除または再作成する前に、対象パスがテスト用の許可範囲内にあることを検証する。処理は途中失敗後や再実行でも同じ結果になるようにする。
+- UI Mode では setup project が既定で実行されない。依存するテストの前に setup project を明示的に実行する。
 
 設定例の `npm run preview` は例示である。production build と development server のどちらを検証するか確認して command を決める。
