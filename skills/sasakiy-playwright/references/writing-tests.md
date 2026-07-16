@@ -32,8 +32,8 @@ test('商品をカートに追加すると件数と小計を更新する', async
 
 - E2E テストでは、各テストが独立した browser context、cookie、local storage、session storage を使う。
 - 別のテストの実行順や成功結果を前提にしない。
-- テストデータは、並列実行しても衝突しない ID、ユーザー、名前空間を worker または test 単位で割り当てる。worker slot には retry 後も安定する `parallelIndex` を使う。
-- 作成したサーバー側データは fixture の teardown または API で片付ける。失敗時にも teardown が動く設計にする。
+- テストデータと server-side state をテスト間で分離する。詳細は[副作用と分離](side-effects-and-isolation.md)に従う。
+- 作成したサーバー側データは fixture の teardown または API で片付ける。
 - `beforeEach` は各テストを同じ既知状態にするために使う。
 - `beforeAll` と worker-scoped fixture は、高コストで安全に共有できる準備に限る。変更可能な `page` や `context` を共有しない。
 - serial mode は独立化できない場合だけ使う。通常の利用経路を分割する手段にしない。

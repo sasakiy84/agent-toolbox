@@ -1,6 +1,6 @@
 ---
 name: sasakiy-playwright
-description: Sasakiy-style Playwright Test rules for designing, writing, reviewing, debugging, and operating frontend end-to-end, component, accessibility, visual, API-assisted, and CI tests. Use when Codex adds, edits, reviews, configures, or diagnoses Playwright tests for a frontend application.
+description: Sasakiy-style rules for writing, reviewing, configuring, debugging, and operating Playwright tests.
 ---
 
 # Sasakiy Playwright
@@ -26,6 +26,7 @@ TypeScript と `@playwright/test` を基本にする。リポジトリが JavaSc
 
 - Playwright の導入、テスト範囲、browser project、`playwright.config.*`、`webServer` を決めるときは、[導入と設定](references/setup-and-configuration.md)を読む。
 - テスト、Locator、待機、assertion、fixture、Page Object を書く、直す、レビューするときは、[テストの作成](references/writing-tests.md)を読む。
+- DB data、server-side state、test-scoped・worker-scoped fixture、retry、UI Mode を扱うときは、[副作用と分離](references/side-effects-and-isolation.md)を読む。
 - 認証、テストデータ、network mock、API、時刻、browser API、Component Testing を扱うときは、[状態と外部境界](references/state-and-integrations.md)を読む。
 - アクセシビリティ、ARIA snapshot、visual test、browser・device 差を検証するときは、[品質検査](references/quality-checks.md)を読む。
 - retry、parallel、shard、reporter、CI、TypeScript、失敗調査を扱うときは、[CI と障害調査](references/ci-and-debugging.md)を読む。

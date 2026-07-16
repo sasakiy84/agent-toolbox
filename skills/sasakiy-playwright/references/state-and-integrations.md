@@ -2,10 +2,6 @@
 
 認証、テストデータ、network mock、API、時刻、browser API、Component Testing を扱うときに読む。
 
-## 外部 resource を既知状態に戻す
-
-- setup や fixture は、対話的な再実行、順不同実行、長時間稼働する依存 process を考慮する。UI mode では何度も同じテストを実行する可能性がある
-
 ## 認証情報を安全に再利用する
 
 - 認証 setup は project dependency を基本にする。setup 自体を report、trace、fixture、retry の対象にする。
