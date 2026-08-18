@@ -1,12 +1,13 @@
 services:
-  dev-workspace:
-    container_name: dev-workspace
+  workspace:
+    container_name: workspace
     build:
       context: .
       dockerfile_inline: |
         FROM ubuntu:26.04
 
         ENV DEBIAN_FRONTEND=noninteractive
+        SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
         RUN apt-get update \
             && apt-get install -y --no-install-recommends \
@@ -22,6 +23,7 @@ services:
                 ripgrep \
                 tar \
                 unzip \
+                sudo \
                 wget \
             && mkdir -p -m 755 /etc/apt/keyrings \
             && wget -nv -O /etc/apt/keyrings/githubcli-archive-keyring.gpg https://cli.github.com/packages/githubcli-archive-keyring.gpg \
@@ -45,4 +47,5 @@ services:
     gpus: all
     volumes:
       - .:/workspace
-      - /mnt/data/dir:/workspace/data:rw
+      - /mnt/data:/workspace/data:rw
+
