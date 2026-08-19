@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile_inline: |
-        FROM mcr.microsoft.com/devcontainers/base:resolute
+        FROM ubuntu:26.04
 
         ENV DEBIAN_FRONTEND=noninteractive
 
