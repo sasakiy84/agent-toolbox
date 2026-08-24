@@ -35,7 +35,6 @@ description: Sasakiy-style planning rules for turning a request, issue, feature 
 ## 計画に含める内容
 
 計画には、目的、現状、設計方針、テスト方針、完了条件をかく。
-検討過程で出てきた案は「やらないこと」に書かず、関連する場所か末尾で別案として採用しなかった理由を書く。
 
 ## 具体化
 
@@ -45,6 +44,9 @@ description: Sasakiy-style planning rules for turning a request, issue, feature 
 - 変数名の `ID`、`cls` や、関数名の `get` など、対象や責務が分からない汎用名を避ける。
 - リポジトリ内に同種のパターンがある場合は、それに合わせる。
 - 技術的に可能か未確認なら、まず調査計画にする。
+
+最後に、最終設計を最初から計画したものとして全面的に書き直す。
+読者はこの会話の経緯を一切知らない新規参加者とする。経緯を知らないと意味が通じない文は残さないこと
 
 ## レビュー
 
