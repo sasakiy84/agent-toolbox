@@ -30,18 +30,7 @@ description: Sasakiy-style testing and verification rules for implementation wor
 
 ## 実行コマンドの決定
 
-テストコマンドは、リポジトリ内の以下から判断する。
-
-- `AGENTS.md`
-- `README.md`
-- `Makefile`
-- `justfile`
-- `Taskfile.yml`
-- `package.json`
-- `pyproject.toml`
-- `Cargo.toml`
-- CI 設定
-
+テストコマンドは、リポジトリ内の各種設定ファイルから判断する。
 コミット前は `$sasakiy-git` に従い、必要な format / lint / test が通っていることを確認する。
 
 ## 検証報告
