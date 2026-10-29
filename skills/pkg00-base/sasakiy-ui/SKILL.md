@@ -7,6 +7,9 @@ description: Sasakiy-style UI implementation and review rules for layout, spacin
 
 UI を実装・修正・レビューするときに使う。まずリポジトリの `AGENTS.md`、既存画面、デザインシステム、関連テストを確認する。
 
+## 重要事項
+- 不要なセカンダリラベルや説明を避けて、レイアウトで説明させる
+
 ## レイアウト
 
 - 要素同士が重なっていないことを確認する。
