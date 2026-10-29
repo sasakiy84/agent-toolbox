@@ -1,4 +1,0 @@
-interface:
-  display_name: "Technical Book Writing"
-  short_description: "技術解説文書の章構成と文体を設計して改善するスキル"
-  default_prompt: "Use $technical-book-writing to draft or revise a technical explanation with clear structure, examples, and tradeoffs."
