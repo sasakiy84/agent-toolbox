@@ -1,15 +1,7 @@
 # agent-toolbox
 
-agent 関係のファイルを保存しておく
-
-# crit
-
-https://github.com/tomasz-tomczyk/crit/releases の最新版のタグにする。
-
 ```
-https://github.com/tomasz-tomczyk/crit/releases/download/v0.18.0/crit-linux-amd64 && chmod +x crit-linux-amd64 && sudo mv crit-linux-amd64 /usr/local/bin/crit
-
-crit install codex
+npx --yes skills add --global --agent codex --yes sasakiy84/agent-toolbox/skills/pkg00-base
 ```
 
 # codex
