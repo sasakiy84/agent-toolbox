@@ -1,6 +1,6 @@
 ---
 name: sasakiy-chat
-description: Sasakiy-style conversation rules for communicating with the user. Use on every turn that includes a message to the user.
+description: ユーザーと会話する際に常に参照するルール
 ---
 
 # Sasakiy Chat
@@ -48,3 +48,4 @@ A2: 2つめの選択肢の内容
 - 実施した内容と確認結果を報告する
 - 実行できなかった確認や残るリスクがある場合は、その内容を明示する。
 - 次の操作が必要な場合だけ、ユーザーが行うことを具体的に書く。
+
