@@ -1,11 +1,10 @@
 ---
 name: sasakiy-typescript
-description: Sasakiy-style TypeScript and JavaScript implementation rules for API boundaries, request/response tests, payload construction, and TypeScript-specific safety. Use when Codex edits TypeScript or JavaScript code.
+description: TypeScript コードを実装・修正するときに守るべきルールや方針をまとめたもの
 ---
 
 # Sasakiy TypeScript
 
-TypeScript / JavaScript のコードを実装・修正するときに使う。まずリポジトリの `AGENTS.md`、`package.json`、tsconfig、既存コード、関連テストを確認する。
 
 ## TypeScript 固有の型安全性
 
@@ -29,4 +28,4 @@ TypeScript / JavaScript のコードを実装・修正するときに使う。�
 - 型エラーや lint エラーを `ignore`、`any`、型アサーションで安易に回避しない。
 - Playwright では web-first assertion を使う。
 - Testing Library を有効活用する。
-- MSW で外部 API をモックする。
+
