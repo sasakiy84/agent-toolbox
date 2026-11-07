@@ -1,4 +1,3 @@
-
 #!/bin/bash
 cd ~/.local/share/agent-toolbox || exit 1
 mkdir -p ~/.agents/skills ~/.claude/skills
