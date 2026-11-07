@@ -7,5 +7,5 @@ while true; do
   ln -sfn "$PWD"/skills/{pkg00-base,pkg01-dev}/* ~/.agents/skills/
   ln -sfn "$PWD"/skills/{pkg00-base,pkg01-dev}/* ~/.claude/skills/
   find ~/.agents/skills ~/.claude/skills -maxdepth 1 -xtype l -delete
-  sleep 3600
+  sleep 600
 done
