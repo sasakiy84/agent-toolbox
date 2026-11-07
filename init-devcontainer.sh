@@ -4,6 +4,9 @@ if [ -f ".devcontainer/devcontainer.json" ]; then echo ".devcontainer/devcontain
 	"image": "mcr.microsoft.com/devcontainers/base:resolute",
   "remoteUser": "vscode",
 	"shutdownAction": "none",
+	"appPort": [
+		// hostPort:containerPort
+	],
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:4": {
 			"version": "latest",
