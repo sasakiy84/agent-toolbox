@@ -47,7 +47,7 @@ if [ -f ".devcontainer/devcontainer.json" ]; then echo ".devcontainer/devcontain
 		"--hostname=${localWorkspaceFolderBasename}-devcontainer",
 		"--name=devcontainer-${localWorkspaceFolderBasename}-${devcontainerId}"
 	],
-	"onCreateCommand": "sudo chown -R \"$(id -u):$(id -g)\" /home/vscode/.claude /home/vscode/.codex /home/vscode/.config/gh",
+	"sudo chown -R \"$(id -u):$(id -g)\" \"$HOME/.claude\" \"$HOME/.config/anthropic\" \"$HOME/.codex\" \"$HOME/.copilot\" \"$HOME/.config/gh\"",
 	"postCreateCommand": {
 		"codex": "curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh",
 		"claude": "curl -fsSL https://claude.ai/install.sh | bash",
