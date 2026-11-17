@@ -37,7 +37,7 @@ if [ -f ".devcontainer/devcontainer.json" ]; then echo ".devcontainer/devcontain
 		"source=anthropic-config,target=/home/vscode/.config/anthropic,type=volume",
 		"source=codex-config-${localWorkspaceFolderBasename}-${devcontainerId},target=/home/vscode/.codex,type=volume",
 		"source=copilot-config,target=/home/vscode/.copilot,type=volume",
-		"source=gh-config,target=/home/vscode/.config/gh,type=volume"
+		"source=gh-config-${localWorkspaceFolderBasename}-${devcontainerId},target=/home/vscode/.config/gh,type=volume"
 	],
 	"containerEnv": {
 		"CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
@@ -57,7 +57,8 @@ if [ -f ".devcontainer/devcontainer.json" ]; then echo ".devcontainer/devcontain
 		"sasakiy-skills": "mkdir -p ~/.local/share && git clone --depth 1 https://github.com/sasakiy84/agent-toolbox.git ~/.local/share/agent-toolbox"
 	},
 	"postStartCommand": {
-		"sync-basic-skills": "nohup bash -c 'bash /home/vscode/.local/share/agent-toolbox/sync-basic-skills.sh >/tmp/skills-update.log 2>&1 </dev/null &' >/dev/null 2>&1"
+		"sync-basic-skills": "nohup bash -c 'bash /home/vscode/.local/share/agent-toolbox/sync-basic-skills.sh >/tmp/skills-update.log 2>&1 </dev/null &' >/dev/null 2>&1",
+		"gh-pat": "echo 'Create a GitHub Personal Access Token' && echo 'https://github.com/settings/personal-access-tokens/new?name=-for-agent&description=%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E7%94%A8%E3%81%AE%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3&expires_in=30&contents=write&pull_requests=write&issues=write&discussions=write&actions=write&pages=write&actions_variables=write&administration=read&artifact_metadata=read&attestations=read&code_quality=read&security_events=read&codespaces=read&codespaces_lifecycle_admin=read&codespaces_metadata=read&statuses=read&repository_custom_properties=read&vulnerability_alerts=read&dependabot_secrets=read&deployments=read&environments=read&merge_queues=read&repository_advisories=read&secret_scanning_alerts=read&secrets=read&repository_hooks=read'"
 	}
 }
 EOF
