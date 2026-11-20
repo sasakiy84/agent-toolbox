@@ -32,7 +32,7 @@ if [ -f ".devcontainer/devcontainer.json" ]; then echo ".devcontainer/devcontain
 	},
 	"mounts": [
 		"type=bind,source=/mnt/data1,target=/data,readonly",
-		// "type=bind,source=/mnt/data1/hdd,target=/workspace/${localWorkspaceFolderBasename}/data/hdd",
+		// "type=bind,source=/mnt/data1/hdd,target=/workspaces/${localWorkspaceFolderBasename}/data/hdd",
 		"source=claude-code-config,target=/home/vscode/.claude,type=volume",
 		"source=anthropic-config,target=/home/vscode/.config/anthropic,type=volume",
 		"source=codex-config-${localWorkspaceFolderBasename}-${devcontainerId},target=/home/vscode/.codex,type=volume",
